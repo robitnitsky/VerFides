@@ -11,14 +11,28 @@
     slidesToShow: 1,
     rows: 0,
     centerMode: true,
-    centerPadding: '300px',
+    centerPadding: '240px',
     prevArrow: '<button type="button" class="slick-prev"><span class="icon-slider-arrow-left"></span></button>',
     nextArrow: '<button type="button" class="slick-next"><span class="icon-slider-arrow-right"></span></button>',
 
-    responsive: [{
-      breakpoint: 768,
+    responsive: [
+      {
+        breakpoint: 1200,
+        settings: {
+          centerPadding: '150px',
+        }
+      },
+      {
+        breakpoint: 1024,
+        settings: {
+          centerPadding: '100px',
+        }
+      },
+      {
+        breakpoint: 768,
         settings: "unslick" // destroys slick
-      }]
+      }
+      ]
     });
 
   $('body').mobileNav({

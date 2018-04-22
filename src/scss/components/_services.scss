@@ -12,20 +12,40 @@
       position: absolute;
       top: 0;
       bottom: 0;
-      right: calc(100% - 300px);
-      width: 300px;
+      right: calc(100% - 100px);
+      width: 100px;
       z-index: 99;
       background: linear-gradient(to left, rgba(255,255,255,1) 0%,rgba(255,255,255,1) 70%,rgba(255,255,255,0.5) 100%);
+
+      @include media ('>=desktop') {
+        right: calc(100% - 150px);
+        width: 150px;
+      }
+
+      @include media ('>=widescreen') {
+        right: calc(100% - 260px);
+        width: 260px;
+      }
     }
 
     &:after {
-      left: calc(100% - 300px);
+      left: calc(100% - 100px);
       right: auto;
       background: linear-gradient(to right, rgba(255,255,255,1) 0%,rgba(255,255,255,1) 70%,rgba(255,255,255,0.5) 100%); 
+
+      @include media ('>=desktop') {
+        left: calc(100% - 150px);
+      }
+
+      @include media ('>=widescreen') {
+        left: calc(100% - 260px);
+      }
     }
   }
 
   .slick-arrow {
+    @include animate(opacity);
+    
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
@@ -36,17 +56,41 @@
     font-size: 50px;
     z-index: 9;
 
+    @include media ('>=desktop') {
+      font-size: 71px;
+    }
+
+    &:hover {
+      opacity: .7;
+    }
+
     &.slick-prev {
-      left: 250px;
+      left: 50px;
+
+      @include media ('>=desktop') {
+        left: 100px;
+      }
+
+      @include media ('>=widescreen') {
+        left: 176px;
+      }
     }
 
     &.slick-next {
-      right: 250px;
+      right: 50px;
+
+      @include media ('>=desktop') {
+        right: 100px;
+      }
+
+      @include media ('>=widescreen') {
+        right: 176px;
+      }
     }
   }
 
   .slide {
-    @include media ('>=desktop') {
+    @include media ('>=tablet') {
       display: flex;
     }
   }
@@ -67,6 +111,10 @@
     margin: 0 auto;
   }
 
+  @include media ('>=desktop') {
+    font-size: 18px;
+  }
+
   &:last-child {border:none;}
 
   .visual {
@@ -81,6 +129,11 @@
 
     @include media ('>=tablet') {
       margin: 0 auto;
+    }
+
+    @include media ('>=desktop') {
+      @include size(110px);
+      margin-bottom: 20px;
     }
 
     &.color-1 {background: map-deep-get($colors, 'services-colors', 'color-1');}
@@ -98,6 +151,10 @@
       left: 50%;
       transform: translate(-50%, -50%);
       font-size: 25px;
+
+      @include media ('>=widescreen') {
+        font-size: 47px;
+      }
     }
   }
 }

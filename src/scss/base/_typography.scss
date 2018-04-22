@@ -139,6 +139,10 @@ a {
       width: 125px;
       height: 1px;
       background: map-get($colors, 'blue');
+
+      @include media ('>=desktop') {
+        width: 250px;
+      }
     }
   }
 

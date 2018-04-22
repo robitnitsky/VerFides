@@ -1,0 +1,103 @@
+.services {
+  padding: 0 30px;
+
+  @include media ('>=tablet') {
+    padding: 0;
+  }
+
+  .slick-list {
+    &:before,
+    &:after {
+      content: '';
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      right: calc(100% - 300px);
+      width: 300px;
+      z-index: 99;
+      background: linear-gradient(to left, rgba(255,255,255,1) 0%,rgba(255,255,255,1) 70%,rgba(255,255,255,0.5) 100%);
+    }
+
+    &:after {
+      left: calc(100% - 300px);
+      right: auto;
+      background: linear-gradient(to right, rgba(255,255,255,1) 0%,rgba(255,255,255,1) 70%,rgba(255,255,255,0.5) 100%); 
+    }
+  }
+
+  .slick-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    box-shadow: none;
+    border: none;
+    outline: none;
+    font-size: 50px;
+    z-index: 9;
+
+    &.slick-prev {
+      left: 250px;
+    }
+
+    &.slick-next {
+      right: 250px;
+    }
+  }
+
+  .slide {
+    @include media ('>=desktop') {
+      display: flex;
+    }
+  }
+}
+
+.service-item {
+  display: flex;
+  align-items: center;
+  padding: 10px 0;
+  font-size: 14px;
+  border-bottom: 1px solid map-get($colors, 'gray-light');
+
+  @include media ('>=tablet') {
+    display: block;
+    text-align: center;
+    border: none;
+    max-width: 200px;
+    margin: 0 auto;
+  }
+
+  &:last-child {border:none;}
+
+  .visual {
+    @include size(55px);
+
+    position: relative;
+    border-radius: 100%;
+    background: map-get($colors, 'gray');
+    color: map-get($colors, 'white');
+    margin-right: 10px;
+    flex-shrink: 0;
+
+    @include media ('>=tablet') {
+      margin: 0 auto;
+    }
+
+    &.color-1 {background: map-deep-get($colors, 'services-colors', 'color-1');}
+    &.color-2 {background: map-deep-get($colors, 'services-colors', 'color-2');}
+    &.color-3 {background: map-deep-get($colors, 'services-colors', 'color-3');}
+    &.color-4 {background: map-deep-get($colors, 'services-colors', 'color-4');}
+    &.color-5 {background: map-deep-get($colors, 'services-colors', 'color-5');}
+    &.color-6 {background: map-deep-get($colors, 'services-colors', 'color-6');}
+    &.color-7 {background: map-deep-get($colors, 'services-colors', 'color-7');}
+    &.color-8 {background: map-deep-get($colors, 'services-colors', 'color-8');}
+
+    [class^="icon"] {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-size: 25px;
+    }
+  }
+}

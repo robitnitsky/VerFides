@@ -1,0 +1,44 @@
+.full-width-visual {
+  position: relative;
+  min-height: 150px;
+
+  @include media ('>=desktop') {
+    min-height: 300px;
+  }
+
+  &:before,
+  &:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 2;
+  }
+
+  &:before {
+    background: rgba(map-get($colors, 'black'), .4);
+
+    @include media ('>=desktop') {
+      background: rgba(map-get($colors, 'black'), .5);
+    }
+  }
+
+  &:after {
+    z-index: 3;
+    background: linear-gradient(to right, rgba(165,164,169,1) 0%,rgba(141,140,144,1) 100%); 
+    opacity: .8;
+
+    @include media ('>=desktop') {
+      background: linear-gradient(to right, rgba(28,32,58,1) 0%,rgba(0,114,182,1) 100%);
+      opacity: .6;
+    }
+  }
+}
+
+.bg-stretch {
+  background-size: cover;
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+}

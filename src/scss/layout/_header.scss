@@ -1,0 +1,216 @@
+.header {
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	z-index: 999;
+	background: map-get($colors, 'dark-blue');
+
+	@include media ('>=desktop') {
+		background: none;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		padding: 20px 30px;
+	}
+
+	.flex-aligned {
+		display: flex;
+		justify-content: space-between;
+
+		@include media ('>=desktop') {
+			display: block;
+			margin: 10px 0 -11px;
+		}
+	}
+}
+
+.logo {
+	width: 200px;
+	height: 60px;
+	padding: 21px 57px;
+
+	@include media ('>=desktop') {
+		width: 173px;
+		padding: 0;
+	}
+
+	a {
+		display: block;
+	}
+}
+
+.nav-opener {
+	display: block;
+	position: relative;
+	background: map-get($colors, 'white');
+	border: none;
+	box-shadow: none;
+	width: 120px;
+	height: 60px;
+	outline: none;
+
+	@include media ('>=desktop') {
+		display: none;
+	}
+
+	&:before,
+	&:after,
+	span {
+		content: '';
+		position: absolute;
+		width: 25px;
+		height: 2px;
+		border-radius: 4px;
+		background: map-get($colors, 'gray-2');
+		left: 50%;
+		transform: translateX(-50%);
+	}
+
+	&:before,
+	&:after {
+		@include animate(top transform);
+	}
+
+	&:before {
+		top: 24px;
+	}
+
+	span {
+		top: 31px;
+	}
+
+	&:after {
+		top: 37px;
+	}
+
+	.nav-active & {
+		span {display: none;}
+
+		&:before,
+		&:after {
+			top: 50%;
+			transform: translate(-50%, -50%) rotate(45deg);
+		}
+
+		&:after {
+			transform: translate(-50%, -50%) rotate(-45deg);
+		}
+	}
+}
+
+.navigation-holder {
+	@include animate(opacity visibility transform);
+
+	position: absolute;
+	top: 100%;
+	left: 0;
+	right: 0;
+	z-index: 999;
+	opacity: 0;
+	visibility: hidden;
+	transform: translateY(100%);
+
+	@include media ('>=desktop') {
+		position: static;
+		top: auto;
+		left: auto;
+		right: auto;
+		opacity: 1;
+		visibility: visible;
+		transform: translateY(0);
+	}
+
+	.nav-active & {
+		opacity: 1;
+		visibility: visible;
+		transform: translateY(0);
+	}
+}
+
+.navigation {
+	@extend %listreset;
+
+	text-align: center;
+
+	@include media ('>=desktop') {
+		text-align: left;
+		font-size: 18px;
+		margin-right: 26px;
+	}
+
+	li {
+		@include cascade(10, transform,  $duration: 0.3s);
+
+		transform: translateY(10px);
+
+		@include media ('>=desktop') {
+			transform: translateY(0);
+			display: inline-block;
+			vertical-align: top;
+			margin: 0 0 0 20px;
+		}
+
+		@include media ('>=widescreen') {
+			margin: 0 0 0 42px;
+		}
+
+		&.active {
+			a {
+				&:after {
+					@include media ('>=desktop') {
+						opacity: 1;
+					}
+				}
+			}
+		}
+	}
+
+	a {
+		display: block;
+		text-decoration: none;
+		text-transform: uppercase;
+		padding: 10px 15px;
+		color: map-get($colors, 'white');
+		border-bottom: 1px solid map-get($colors, 'white');
+		background: rgba(map-get($colors, 'dark-blue'), .95);
+
+		@include media ('>=desktop') {
+			background: none;
+			border: none;
+			text-transform: none;
+			padding: 0;
+			position: relative;
+		}
+
+		&:hover {
+			&:after {
+				@include media ('>=desktop') {
+					opacity: 1;
+				}
+			}
+		}
+
+		&:after {
+			@include media ('>=desktop') {
+				@include animate(opacity);
+
+				content: '';
+				position: absolute;
+				top: calc(100% + 8px);
+				left: 0;
+				right: 0;
+				height: 1px;
+				background: map-get($colors, 'white');
+				pointer-events: none;
+				opacity: 0;
+			}
+		}
+	}
+
+	.nav-active &{
+		li {
+			transform: translateY(0);
+		}
+	}
+}

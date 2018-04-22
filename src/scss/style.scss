@@ -1,0 +1,29 @@
+// Note: any .css or .scss files included in the 'styles' directory
+// will be correctly compiled during `gulp` and `gulp production`
+
+//* Vendors *//
+@import './node_modules/include-media/dist/include-media';
+
+
+//* Abstracts modules *//
+@import 'abstracts/main';
+
+//* Base modules *//
+@import 'base/main';
+
+//* Layout modules *//
+@import 'layout/main';
+
+//* Pages modules *//
+@import 'pages/main';
+
+//* Components *//
+@import 'components/starter-box';
+@import 'components/services';
+@import 'components/full-width-visual';
+@import 'components/person-cards';
+@import 'components/buttons';
+@import 'components/brochures';
+@import 'components/article-preview';
+@import 'components/locations';
+@import 'components/intro-section';

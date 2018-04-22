@@ -1,0 +1,63 @@
+.footer {
+  padding: 17px 0;
+  border-top: 2px solid map-get($colors, 'dark-blue-2');
+
+  .copy, .by {
+    display: block;
+    text-align: center;
+    font-size: 9px;
+
+    @include media ('>=tablet') {
+      font-size: 12px;
+    }
+  }
+
+  .copy {
+    margin: 0 0 20px;
+  }
+}
+
+.footer-navigation {
+  @extend %listreset;
+
+  column-count: 2;
+  font-size: 13px;
+  padding: 0 0 13px;
+  margin: 0 0 9px;
+  border-bottom: 1px solid map-get($colors, 'gray-light');
+
+  @include media ('>=tablet') {
+    column-count: auto;
+    text-align: right;
+    margin: 0 0 15px;
+  }
+
+  li {
+    padding: 0 0 4px;
+    break-inside: avoid;
+
+    @include media ('>=tablet') {
+      display: inline-block;
+      vertical-align: top;
+      margin: 0 0 4px 10px;
+    }
+  }
+
+  a {
+    color: inherit;
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
+
+.footer-logo {
+  width: 86px;
+  margin: 0 auto 4px;
+
+  @include media ('>=tablet') {
+    width: 172px;
+  }
+}

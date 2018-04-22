@@ -1,0 +1,107 @@
+.locations-group {
+  @include media ('>=tablet') {
+    display: flex;
+    justify-content: space-around;
+  }
+
+  @include media ('>=desktop') {
+    padding: 29px 0 0;
+  }
+}
+
+.location {
+  text-align: center;
+  margin: 0 0 35px;
+
+  .map {
+    @include size(112px);
+
+    position: relative;
+    border-radius: 100%;
+    overflow: hidden;
+    margin: 0 auto 13px;
+
+    @include media ('>=desktop') {
+      @include size(220px);
+
+      margin: 0 auto 26px;
+    }
+
+
+    a {
+      display: block;
+      position: relative;
+
+      &:hover {
+        &:after {
+          opacity: .3;
+        }
+      }
+
+      &:after {
+        @include animate(opacity);
+
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: rgba(map-get($colors, 'darker-blue-2'), .6);
+      }
+    }
+
+    img {
+      display: block;
+      width: 100%;
+    }
+  }
+
+  .title {
+    display: block;
+    position: relative;
+    font-size: 14px;
+    padding: 0 0 4px;
+    margin: 0 0 12px;
+    font-weight: 700;
+    font-family: map-get($base, 'base-font-serif');
+
+    @include media ('>=desktop') {
+      font-size: 18px;
+      padding: 0 0 8px;
+      margin: 0 0 25px;
+    }
+
+    &:after {
+      content: '';
+      position: absolute;
+      top: 100%;
+      left: 50%;
+      transform: translateX(-50%);
+      height: 1px;
+      width: 10px;
+      background: map-get($colors, 'dark-blue');
+    }
+  }
+
+  .location-info {
+    font-style: normal;
+    margin: 0 0 12px;
+
+    @include media ('>=desktop') {
+      margin: 0 0 22px;
+    }
+  }
+
+  .contact-list {
+    @extend %listreset;
+
+    a {
+      text-decoration: none;
+      
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+}

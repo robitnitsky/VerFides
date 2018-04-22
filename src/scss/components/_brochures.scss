@@ -1,0 +1,44 @@
+.brochures-group {
+
+  @include media ('>=tablet') {
+    padding: 17px 0 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+}
+
+.brochure {
+  text-align: center;
+  margin: 0 0 20px;
+
+  @include media ('>=tablet') {
+    margin: 0 33px 30px;
+  }
+
+  .visual {
+    max-width: 83px;
+    margin: 0 auto 9px;
+
+    @include media ('>=desktop') {
+      max-width: 166px;
+      margin: 0 auto 12px;
+    }
+
+    img {
+      display: block;
+      width: 100%;
+    }
+  }
+
+  .title {
+    display: block;
+    font-size: 14px;
+
+    @include media ('>=desktop') {
+      font-size: 18px;
+      margin: 0 0 4px;
+    }
+  }
+}

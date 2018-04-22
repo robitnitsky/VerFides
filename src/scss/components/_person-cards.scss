@@ -1,0 +1,114 @@
+.person-cards-group {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+
+  @include media ('>=desktop') {
+    justify-content: space-between;
+  }
+
+  .person-card {
+    max-width: 50%;
+
+    @include media ('>=tablet') {
+      max-width: 25%;
+    }
+  }
+}
+
+.person-card {
+  text-align: center;
+  padding: 0 9px;
+  margin: 0 0 28px;
+
+  @include media ('>=desktop') {
+    padding: 0 25px;
+    margin: 0 0 18px;
+  }
+
+  .visual {
+    @include size(90px);
+
+    @include media ('>=desktop') {
+
+      @include size(180px);
+      
+    }
+
+    border-radius: 100%;
+    overflow: hidden;
+    margin: 0 auto;
+
+    img {
+      display: block;
+      backface-visibility: hidden;
+    }
+  }
+
+  .card-body {
+    padding: 7px 0;
+
+    @include media ('>=desktop') {
+      padding: 21px 0;
+    }
+  }
+
+  .name,
+  .position {
+    display: block;
+    font-size: 12px;
+    line-height: 1.14285714;
+
+    @include media ('>=tablet') {
+      line-height: 1.242857;
+    }
+  }
+
+  .name {
+    font-size: 14px;
+    font-weight: 400;
+
+    @include media ('>=tablet') {
+      font-size: 18px;
+    }
+  }
+
+  .position {
+    margin: 0 0 4px;
+
+    @include media ('>=desktop') {
+      margin: 0 0 5px;
+    }
+  }
+
+  .social {
+    @extend %listreset;
+
+    text-align: center;
+    font-size: 14px;
+
+    li {
+      display: inline-block;
+      vertical-align: top;
+      margin: 0 5px;
+    }
+
+    a {
+      @include animate(opacity);
+
+      text-decoration: none;
+
+      &:hover {
+        opacity: .7;
+      }
+    }
+
+    [class^='icon'] {
+      font-size: 14px;
+
+      @include media ('>=tablet') {
+        font-size: 18px;
+      }
+    }
+  }
+}

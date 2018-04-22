@@ -1,0 +1,53 @@
+.intro-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  background-size: cover;
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  color: map-get($colors, 'white');
+
+  &:before {
+    content: '';
+    display: block;
+    width: 0;
+    height: 100vh;
+  }
+
+  .anchor-link {
+    @include animate(background color);
+    @include size(37px);
+
+    position: absolute;
+    bottom: 40px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: map-get($colors, 'white');
+    z-index: 99;
+    border: 1px solid map-get($colors, 'white');
+    text-decoration: none;
+
+    @include media ('>=tablet') {
+      @include size(50px);
+      bottom: 82px;
+    }
+
+    &:hover {
+      background: map-get($colors, 'white');
+      color: map-get($colors, 'dark-blue');
+    }
+
+    [class^='icon'] {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+  }
+}
+
+.intro-content {
+  max-width: 560px;
+  padding: 100px 20px;
+}

@@ -35,6 +35,12 @@
       ]
     });
 
+  $(window).on('resize orientationchange', function() {
+    if(window.innerWidth >= 768){
+      $('.slider').slick('resize');
+      }
+  });
+
   $('body').mobileNav({
     menuActiveClass: 'nav-active',
     menuOpener: '.nav-opener',

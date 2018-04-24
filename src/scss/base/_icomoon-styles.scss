@@ -18,10 +18,7 @@ $icon-icon-08: \e90b;
 
 @font-face {
   font-family: 'icomoon';
-  src:
-    url('#{$icomoon-font-path}/icomoon.ttf?va3vgz') format('truetype'),
-    url('#{$icomoon-font-path}/icomoon.woff?va3vgz') format('woff'),
-    url('#{$icomoon-font-path}/icomoon.svg?va3vgz#icomoon') format('svg');
+  src: url('#{$icomoon-font-path}/icomoon.woff?va3vgz') format('woff');
   font-weight: normal;
   font-style: normal;
 }

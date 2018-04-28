@@ -7,14 +7,14 @@ $icon-linkedin: \e901;
 $icon-arrow-down: \e902;
 $icon-arrow-right: \e903;
 $icon-arrow-left: \e90c;
-$icon-icon-01: \e904;
-$icon-icon-02: \e905;
-$icon-icon-03: \e906;
-$icon-icon-04: \e907;
-$icon-icon-05: \e908;
-$icon-icon-06: \e909;
-$icon-icon-07: \e90a;
-$icon-icon-08: \e90b;
+$icon-sand-clock: \e904;
+$icon-balance: \e905;
+$icon-puzzle: \e906;
+$icon-key: \e907;
+$icon-tower: \e908;
+$icon-tree: \e909;
+$icon-case: \e90a;
+$icon-scores: \e90b;
 
 @font-face {
   font-family: 'icomoon';
@@ -78,44 +78,44 @@ $icon-icon-08: \e90b;
     content: unicode($icon-arrow-left); 
   }
 }
-.icon-icon-01 {
+.icon-sand-clock {
   &:before {
-    content: unicode($icon-icon-01); 
+    content: unicode($icon-sand-clock); 
   }
 }
-.icon-icon-02 {
+.icon-balance {
   &:before {
-    content: unicode($icon-icon-02); 
+    content: unicode($icon-balance); 
   }
 }
-.icon-icon-03 {
+.icon-puzzle {
   &:before {
-    content: unicode($icon-icon-03); 
+    content: unicode($icon-puzzle); 
   }
 }
-.icon-icon-04 {
+.icon-key {
   &:before {
-    content: unicode($icon-icon-04); 
+    content: unicode($icon-key); 
   }
 }
-.icon-icon-05 {
+.icon-tower {
   &:before {
-    content: unicode($icon-icon-05); 
+    content: unicode($icon-tower); 
   }
 }
-.icon-icon-06 {
+.icon-tree {
   &:before {
-    content: unicode($icon-icon-06); 
+    content: unicode($icon-tree); 
   }
 }
-.icon-icon-07 {
+.icon-case {
   &:before {
-    content: unicode($icon-icon-07); 
+    content: unicode($icon-case); 
   }
 }
-.icon-icon-08 {
+.icon-scores {
   &:before {
-    content: unicode($icon-icon-08); 
+    content: unicode($icon-scores); 
   }
 }
 

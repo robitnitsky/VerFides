@@ -4,10 +4,10 @@
   display: inline-block;
   vertical-align: top;
   text-decoration: none;
-  border: 1px solid map-get($colors, 'dark-blue');
+  border: 1px solid $dark-blue;
   font-size: 12px;
   font-weight: 700;
-  color: map-get($colors, 'dark-blue');
+  color: $dark-blue;
   min-width: 142px;
   padding: 12px 5px;
   background: none;
@@ -20,18 +20,18 @@
   }
 
   &:hover {
-    background: map-get($colors, 'dark-blue');
-    color: map-get($colors, 'white');
+    background: $dark-blue;
+    color: $white;
   }
   
 
   &.white {
-    border-color: map-get($colors, 'white');
-    color: map-get($colors, 'white');
+    border-color: $white;
+    color: $white;
 
     &:hover {
-      background: map-get($colors, 'white');
-      color: map-get($colors, 'dark-blue');
+      background: $white;
+      color: $dark-blue;
     }
   }
 }

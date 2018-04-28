@@ -4,7 +4,7 @@
 	left: 0;
 	right: 0;
 	z-index: 999;
-	background: map-get($colors, 'dark-blue');
+	background: $dark-blue;
 
 	@include media ('>=desktop') {
 		background: none;
@@ -43,7 +43,7 @@
 .nav-opener {
 	display: block;
 	position: relative;
-	background: map-get($colors, 'white');
+	background: $white;
 	border: none;
 	box-shadow: none;
 	width: 120px;
@@ -62,7 +62,7 @@
 		width: 25px;
 		height: 2px;
 		border-radius: 4px;
-		background: map-get($colors, 'gray-2');
+		background: $gray-2;
 		left: 50%;
 		transform: translateX(-50%);
 	}
@@ -125,92 +125,5 @@
 		opacity: 1;
 		visibility: visible;
 		transform: translateY(0);
-	}
-}
-
-.navigation {
-	@extend %listreset;
-
-	text-align: center;
-
-	@include media ('>=desktop') {
-		text-align: left;
-		font-size: 18px;
-		margin-right: 26px;
-	}
-
-	li {
-		@include cascade(10, transform,  $duration: 0.3s);
-
-		transform: translateY(10px);
-
-		@include media ('>=desktop') {
-			transform: translateY(0);
-			display: inline-block;
-			vertical-align: top;
-			margin: 0 0 0 20px;
-		}
-
-		@include media ('>=widescreen') {
-			margin: 0 0 0 42px;
-		}
-
-		&.active {
-			a {
-				&:after {
-					@include media ('>=desktop') {
-						opacity: 1;
-					}
-				}
-			}
-		}
-	}
-
-	a {
-		display: block;
-		text-decoration: none;
-		text-transform: uppercase;
-		padding: 10px 15px;
-		color: map-get($colors, 'white');
-		border-bottom: 1px solid map-get($colors, 'white');
-		background: rgba(map-get($colors, 'dark-blue'), .95);
-
-		@include media ('>=desktop') {
-			background: none;
-			border: none;
-			text-transform: none;
-			padding: 0;
-			position: relative;
-		}
-
-		&:hover {
-			&:after {
-				@include media ('>=desktop') {
-					opacity: 1;
-				}
-			}
-		}
-
-		&:after {
-			@include media ('>=desktop') {
-				@include animate(opacity);
-
-				content: '';
-				position: absolute;
-				top: calc(100% + 8px);
-				left: 0;
-				right: 0;
-				height: 1px;
-				background: map-get($colors, 'white');
-				pointer-events: none;
-				opacity: 0;
-			}
-		}
-	}
-
-	.nav-active &{
-		li {
-			transform: translateY(0);
-		}
 	}
 }

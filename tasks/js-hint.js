@@ -10,7 +10,7 @@ const gulp   = require('gulp'),
 module.exports = function(options) {
 
   return cb => {
-    gulp.src(`./${options.src}/js/**/*.js`)
+    gulp.src(`./${options.src}/js/modules/*.js`)
       .pipe(jshint({
         'esversion': 6
       }))

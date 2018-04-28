@@ -7,10 +7,11 @@ import initMobileNav from './modules/mobile-nav.js';
 import initRetinaCover from './modules/retina-cover.js';
 import smoothScroll from './modules/smooth-scroll.js';
 import initSlick from './modules/init-slick.js';
+import initYoutubeBg from './custom-modules/youtube-background.js';
 
 ( ($) => {
   'use strict';
-  
+
   initMobileNav();
 
   initRetinaCover();
@@ -18,6 +19,8 @@ import initSlick from './modules/init-slick.js';
   smoothScroll('.anchor-link');
 
   initSlick();
+
+  initYoutubeBg();
 
 })(jQuery);
 

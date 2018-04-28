@@ -27,7 +27,6 @@ textarea {
   font-weight: 700;
 
   @include media ('>=tablet') {
-    margin: 0 0 41px;
     padding: map-get($forms, 'form-element-padding');
   }
 
@@ -62,7 +61,7 @@ textarea {
 
   @include media ('>=tablet') {
     resize: vertical;
-    height: calc(100% - 41px);
+    height: calc(100% - 20px);
     margin: 0 0 41px;
     padding: map-get($forms, 'form-element-padding');
   }

@@ -1,0 +1,104 @@
+.currency-tools {
+  display: flex;
+  justify-content: center;
+  margin: 0 0 4px;
+
+  .title {
+    display: inline-block;
+    vertical-align: top;
+    margin-right: 18px;
+  }
+}
+
+.currency-tools-list {
+  @extend %listreset;
+
+  font-weight: 700;
+  font-size: 14px;
+
+  li {
+    display: inline-block;
+    vertical-align: top;
+    margin: 0 16px 0 0;
+  }
+}
+
+.currency-radio {
+  display: inline-block;
+  vertical-align: top;
+  overflow: hidden;
+  cursor: pointer;
+
+  input {
+    position: fixed;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    visibility: hidden;
+
+    &:checked {
+      + .currency-name {
+        color: #769eca;
+      }
+    }
+  }
+}
+
+.currency-bar {
+  background: $dark-blue;
+  color: $white;
+
+  @include media ('>=tablet') {
+    display: flex;
+    justify-content: center;
+  }
+}
+
+.currency-bar-static {
+  padding: 0 10px;
+  border-bottom: 1px solid $white;
+  text-align: center;
+
+  @include media ('>=tablet') {
+    padding: 0 19px 0 3px;
+    border-bottom: none;
+    border-right: 1px solid $white;
+    text-align: left;
+  }
+}
+
+.currency-bar-dinamic {
+  overflow: hidden;
+  height: 32px;
+  padding: 0 0 0 17px;
+
+  @include media ('>=tablet') {
+    height: 40px;
+  }
+
+  .currency-list {
+    white-space: nowrap;
+    overflow-x: scroll;
+  }
+}
+
+.currency-list {
+  @extend %listreset;
+
+  font-size: 14px;
+
+  @include media ('>=tablet') {
+    white-space: nowrap;
+    font-size: 18px;
+  }
+
+  li {
+    display: inline-block;
+    vertical-align: top;
+    padding: 8px 14px;
+  }
+
+  .currency-name {
+    color: $blue;
+  }
+}

@@ -4,8 +4,5 @@
 
 module.exports = [
   './node_modules/jquery/dist/jquery.js',
-  './node_modules/slick-carousel/slick/slick.js',
-  './src/js/modules/mobile-nav.js',
-  './src/js/modules/retina-cover.js',
-  './src/js/modules/smooth-scroll.js',
+  './node_modules/slick-carousel/slick/slick.js'
 ];

@@ -6,13 +6,35 @@
   background-size: cover;
   background-position: 50% 50%;
   background-repeat: no-repeat;
-  color: map-get($colors, 'white');
+  color: $white;
+  overflow: hidden;
 
   &:before {
     content: '';
     display: block;
     width: 0;
     height: 100vh;
+  }
+
+  &.video-paused {
+    .video-toggle {
+      &:before {
+        width: 0;
+        height: 0;
+        border-style: solid;
+        border-width: 9px 0 9px 22px;
+        border-color: transparent transparent transparent #fff;
+        background: none;
+      }
+
+      &:after {
+        left: 100%;
+        opacity: 0;
+      }
+      
+      .pause {display: none;}
+      .play {display: inline;}
+    }
   }
 
   .anchor-link {
@@ -23,9 +45,9 @@
     bottom: 40px;
     left: 50%;
     transform: translateX(-50%);
-    color: map-get($colors, 'white');
+    color: $white;
     z-index: 99;
-    border: 1px solid map-get($colors, 'white');
+    border: 1px solid $white;
     text-decoration: none;
 
     @include media ('>=tablet') {
@@ -34,8 +56,8 @@
     }
 
     &:hover {
-      background: map-get($colors, 'white');
-      color: map-get($colors, 'dark-blue');
+      background: $white;
+      color: $dark-blue;
     }
 
     [class^='icon'] {
@@ -52,28 +74,12 @@
     position: absolute;
     bottom: 39px;
     right: 59px;
-    color: map-get($colors, 'white');
+    color: $white;
     font-size: 18px;
     padding: 0 10px 0 0;
 
     @include media ('>=tablet') {
       display: block;
-    }
-
-    &.toggled {
-      &:before {
-        width: 0;
-        height: 0;
-        border-style: solid;
-        border-width: 9px 0 9px 22px;
-        border-color: transparent transparent transparent #fff;
-        background: none;
-      }
-
-      &:after {
-        left: 100%;
-        opacity: 0;
-      }
     }
 
     &:before,
@@ -82,7 +88,7 @@
       position: absolute;
       width: 5px;
       height: 20px;
-      background: map-get($colors, 'white');
+      background: $white;
       top: 50%;
       transform: translateY(-50%);
       left: 100%;
@@ -97,10 +103,30 @@
 
       left: calc(100% + 12px);
     }
+
+    .play {display: none;}
   }
 }
 
 .intro-content {
   max-width: 560px;
   padding: 100px 20px;
+
+  .section-heading {
+
+    @include media ('>=desktop') {
+      margin-top: 27px;
+    }
+  }
+}
+
+#video{
+  position: relative;
+  background: transparent;
+}
+
+.ytplayer-container{
+  position: absolute;
+  top: 0;
+  z-index: -1;
 }

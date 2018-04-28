@@ -1,3 +1,14 @@
+function initMobileNav () {
+  $('body').mobileNav({
+    menuActiveClass: 'nav-active',
+    menuOpener: '.nav-opener',
+    hideOnClickOutside: true,
+    menuDrop: '.navigation-holder'
+  });
+}
+
+
+
 (function($){
   function MobileNav(options) {
     this.options = $.extend({
@@ -114,3 +125,6 @@
     });
   };
 })(jQuery);
+
+
+export default initMobileNav;

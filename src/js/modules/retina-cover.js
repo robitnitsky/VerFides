@@ -1,3 +1,7 @@
+function initRetinaCover() {
+  $('.bg-stretch').retinaCover();
+}
+
 (function($){
   var styleRules = {};
   var templates = {
@@ -94,3 +98,5 @@
     });
   };
 })(jQuery);
+
+export default initRetinaCover;

@@ -9,3 +9,5 @@ function smoothScroll(anchorClass) {
   });
   return false;
 }
+
+export default smoothScroll;

@@ -3,54 +3,21 @@
 // This file will be compiled into app.js and will not be minified.
 // Feel free with using ES6 here.
 
+import initMobileNav from './modules/mobile-nav.js';
+import initRetinaCover from './modules/retina-cover.js';
+import smoothScroll from './modules/smooth-scroll.js';
+import initSlick from './modules/init-slick.js';
 
 ( ($) => {
-	'use strict';
-  $('.slider').slick({
-    infinite: true,
-    slidesToShow: 1,
-    rows: 0,
-    centerMode: true,
-    centerPadding: '240px',
-    prevArrow: '<button type="button" class="slick-prev"><span class="icon-slider-arrow-left"></span></button>',
-    nextArrow: '<button type="button" class="slick-next"><span class="icon-slider-arrow-right"></span></button>',
+  'use strict';
+  
+  initMobileNav();
 
-    responsive: [
-      {
-        breakpoint: 1200,
-        settings: {
-          centerPadding: '150px',
-        }
-      },
-      {
-        breakpoint: 1024,
-        settings: {
-          centerPadding: '100px',
-        }
-      },
-      {
-        breakpoint: 768,
-        settings: "unslick" // destroys slick
-      }
-      ]
-    });
-
-  $(window).on('resize orientationchange', function() {
-    if(window.innerWidth >= 768){
-      $('.slider').slick('resize');
-      }
-  });
-
-  $('body').mobileNav({
-    menuActiveClass: 'nav-active',
-    menuOpener: '.nav-opener',
-    hideOnClickOutside: true,
-    menuDrop: '.navigation-holder'
-  });
-
-  $('.bg-stretch').retinaCover();
+  initRetinaCover();
 
   smoothScroll('.anchor-link');
+
+  initSlick();
 
 })(jQuery);
 
